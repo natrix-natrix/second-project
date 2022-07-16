@@ -1,4 +1,5 @@
 package ru.practicum.sprint4.page;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,7 @@ public class OrderPageFirst {
     private final By addressInput = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
 
     //поле ввода станции метро
-    private final By stationMetroInput =By.xpath(".//input[@placeholder='* Станция метро']");
+    private final By stationMetroInput = By.xpath(".//input[@placeholder='* Станция метро']");
 
     //поле ввода телефона
     private final By telephoneInput = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
@@ -34,19 +35,22 @@ public class OrderPageFirst {
         return this;
     }
 
-    public  OrderPageFirst setSurname(String yourSurname) {
+    public OrderPageFirst setSurname(String yourSurname) {
         driver.findElement(surnameInput).sendKeys(yourSurname);
         return this;
     }
-    public  OrderPageFirst setAddress(String yourAddress) {
+
+    public OrderPageFirst setAddress(String yourAddress) {
         driver.findElement(addressInput).sendKeys(yourAddress);
         return this;
     }
-    public  OrderPageFirst setStationMetro() {
-        driver.findElement(stationMetroInput).sendKeys(Keys.DOWN,Keys.ENTER);
+
+    public OrderPageFirst setStationMetro() {
+        driver.findElement(stationMetroInput).sendKeys(Keys.DOWN, Keys.ENTER);
         return this;
     }
-    public  OrderPageFirst setTelephone(String yourTelephone) {
+
+    public OrderPageFirst setTelephone(String yourTelephone) {
         driver.findElement(telephoneInput).sendKeys(yourTelephone);
         return this;
     }

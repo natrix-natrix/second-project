@@ -1,34 +1,23 @@
 package ru.practicum.sprint4;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.practicum.sprint4.page.*;
 
 import java.time.LocalDate;
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 
-public class TestOrder {
-    private WebDriver driver;
+public class TestOrder extends BaseTest {
 
     @Before
-    public void startUp() {
-        WebDriverManager.chromedriver().setup();
+    public void clearCookie() {
+        driver.manage().deleteAllCookies();
     }
 
     @Test
     public void topOrderButtonTest() {
-        ChromeOptions options = new ChromeOptions(); //Драйвер для браузера
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://qa-scooter.praktikum-services.ru/");
         new WebDriverWait(driver, 3);
         MainPage mainPage = new MainPage(driver);
@@ -40,10 +29,6 @@ public class TestOrder {
 
     @Test
     public void bottomOrderButtonTest() {
-        ChromeOptions options = new ChromeOptions(); //Драйвер для браузера
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://qa-scooter.praktikum-services.ru/");
         new WebDriverWait(driver, 3);
         MainPage mainPage = new MainPage(driver);
@@ -76,9 +61,5 @@ public class TestOrder {
         assertTrue(orderPageFinish.isOrderComplete());
     }
 
-    @After
-    public void teardown() {
-        driver.quit();
-    }
 
 }

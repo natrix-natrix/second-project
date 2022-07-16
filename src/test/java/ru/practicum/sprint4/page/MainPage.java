@@ -20,9 +20,10 @@ public class MainPage {
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
-    public String getAnswerTextByNumber (int questionNumber){
-        driver.findElement(By.id(QUESTION_CLASS_NAME+questionNumber)).click();
-        return driver.findElement(By.id(ANSWER_CLASS_NAME+questionNumber)).getText();
+
+    public String getAnswerTextByNumber(int questionNumber) {
+        driver.findElement(By.id(QUESTION_CLASS_NAME + questionNumber)).click();
+        return driver.findElement(By.id(ANSWER_CLASS_NAME + questionNumber)).getText();
     }
 
     public void clickTopOrderButton() {
@@ -32,7 +33,8 @@ public class MainPage {
     public void clickBottomOrderButton() {
         driver.findElement(bottomOrderButton).click();
     }
-    public void clickAcceptCookie(){
+
+    public void clickAcceptCookie() {
         driver.findElement(acceptCookieButton).click();
     }
 }

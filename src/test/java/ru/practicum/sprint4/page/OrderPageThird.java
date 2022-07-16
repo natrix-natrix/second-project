@@ -9,7 +9,8 @@ public class OrderPageThird {
 
 
     //кнопка согласия
-    private final By yesButton = By.className("Button_Middle__1CSJM");
+    private final By yesButton = By.xpath(".//button[text()='Да']");
+    ;
 
     public OrderPageThird(WebDriver driver) {
         this.driver = driver;

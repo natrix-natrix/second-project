@@ -1,4 +1,5 @@
 package ru.practicum.sprint4.page;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +27,7 @@ public class OrderPageSecond {
     private final By commentInput = By.xpath(".//input[@placeholder='Комментарий для курьера']");
 
     //кнопка далее
-    private final By nextButton = By.className("Button_Middle__1CSJM");
+    private final By nextButton = By.xpath(".//button[(text()='Заказать') and contains(@class,'Button_Middle__1CSJM')]");
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 

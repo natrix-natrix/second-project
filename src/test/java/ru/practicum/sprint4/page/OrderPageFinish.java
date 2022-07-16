@@ -15,7 +15,7 @@ public class OrderPageFinish {
     }
 
     public boolean isOrderComplete() {
-      return driver.findElement(orderStatusText).getText().contains("Заказ оформлен");
+        return driver.findElement(orderStatusText).getText().contains("Заказ оформлен");
     }
 
 }
